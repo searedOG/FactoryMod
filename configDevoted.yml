@@ -34,6 +34,7 @@ factories:
     - Upgrade to Potion Factory
     - Upgrade to Lottery Factory
     - Accident Repair
+    - Upgrade to Sword Infuser
   Smelter:
     type: FCCUPGRADE
     name: Smelter
@@ -338,6 +339,14 @@ factories:
     recipes:
     - Placeholder
     - Accident Repair
+    Sword_Infuser:
+    type: FCCUPGRADE
+   name: Armor Infuser
+     citadelBreakReduction: 1.0
+     recipes:
+     - Infuse Diamond Sword
+     - Accident Repair
+
 recipes:
   Accident Repair:
     name: Accident Repair
@@ -3321,3 +3330,65 @@ recipes:
         material: DIAMOND
         amount: 512
     factory: Lottery Factory
+Upgrade to Sword Infuser
+     name: Upgrade to Sword Infuser
+     production_time: 10s
+     type: UPGRADE
+     input:
+       uranium:
+         material: EMERALD
+         name: Uranium
+         amount: 64
+         lore:
+         - Uranium T3
+       carbon:
+         material: DIAMOND
+         name: Carbon
+         amount: 64
+         lore:
+         - Carbon T3
+     factory: Sword Infuser
+     Infuse Diamond Sword
+    type: PRODUCTION
+    name: Infuse Diamond Sword
+    production_time: 5s
+    input: 
+       carbon:
+          material: DIAMOND
+          name: Carbon
+          amount: 5
+          lore:
+          - Carbon T3
+       uranium:
+          material: EMERALD
+          name: Uranium
+          amount: 5
+          lore:
+          - Uranium T3
+       diamond sword:
+          material: DIAMOND_SWORD
+          amount: 1
+    output:
+       diamond sword:
+          material: DIAMOND_SWORD
+          name: Infused Diamond Sword
+          amount: 1
+          lore:
+          - A fine blade 
+          - for a fine coolpvper
+          nbt: 
+           AttributeModifiers:
+                     - AttributeName: generic.attackSpeed
+            Slot: mainhand
+            Name: Fast Attack
+            Amount: 4.6
+             Operation: 0
+             UUIDLeast: 1
+             UUIDMost: 1
+                     - AttributeName: generic.attackDamage
+             Slot: mainhand
+             Name: Light Attack
+             Amount: 8
+             Operation: 0
+             UUIDLeast: 894654
+             UUIDMost: 2872
